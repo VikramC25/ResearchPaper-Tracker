@@ -1,4 +1,6 @@
-const API_BASE = "/api";
+// Use the VITE_API_URL environment variable if it exists (for Railway deployment)
+// Otherwise fall back to "/api" which uses the local dev proxy
+const API_BASE = import.meta.env.VITE_API_URL || "/api";
 
 export interface Paper {
   id: number;
